@@ -4,7 +4,7 @@ var jasmine = require('gulp-jasmine');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
-var karma = require('karma').server;
+//var karma = require('karma').server;
 //var runSequence = require('run-sequence');
 
 // run server
@@ -16,7 +16,7 @@ gulp.task('server:start', function() {
 gulp.task('server:restart', function() {
 	gulp.watch( [ './server.js' ], server.restart );
 });
-
+/*
 // start test server suite
 gulp.task('karma', function (done) {
 	karma.start({
@@ -24,7 +24,7 @@ gulp.task('karma', function (done) {
 		singleRun: false
 	}, done);
 });
-
+*/
 // concat js and css
 gulp.task('css', function() {
 	return gulp.src([
