@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var Respoke = require('respoke-admin');
+//var Respoke = require('respoke-admin');
 var https = require('https');
 var http = require('http');
 
@@ -23,7 +23,7 @@ router.route('/tokens')
 		console.log('Create new token using the Respoke API');
 		
 		console.log('POST /tokens endpointId: ', endpointId);
-		
+		/*
 		// Consider putting credentials like appId and appSecret into a configuration file
 		var respoke = new Respoke({
 			appId: process.env.APP_ID,
@@ -47,6 +47,10 @@ router.route('/tokens')
 				});
 			}
 		});
+		*/
+		res.json({
+					token: tokenId
+			});
 	});
 
 router.route('/webhooks')
