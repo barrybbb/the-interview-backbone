@@ -8,7 +8,7 @@
 		
 		respoke.log.setLevel("debug");
 		
-		this.client = respoke.createClient();	// instance of the Respoke Client
+		this.client = respoke.createClient({baseURL: 'http://127.0.0.1:8080'});	// instance of the Respoke Client
 		
 		this.endpoints = {};
 		
