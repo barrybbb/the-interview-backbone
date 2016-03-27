@@ -58,10 +58,22 @@ router.route('/webhooks')
 	.post(function(req, res) {
 		console.log(req);
 	});
+//Handle v1/session token
+router.route('/session-tokens')
+	
+	.post(function(req, res) {
 
+		var tokenId = req.body.tokenId;
+		
+		console.log('POST /v1/session-tokens endpointId: ', tokenId);
+
+		res.json({
+					token: tokenId
+				});
+	});
 // Register our routes
 app.use('/api', router);
-
+app.use('/v1', router);
 app.use(express.static(__dirname + '/app'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
