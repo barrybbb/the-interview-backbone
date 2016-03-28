@@ -1,4 +1,4 @@
-ENV: node v4.4.0 npm 2.14.20
+ENV: node v0.10.33 npm 1.4.28
 npm intall & bower install
 gulp
 
