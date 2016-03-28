@@ -16,15 +16,16 @@ var router = express.Router();
 // temp taken
 var tokenId = "yangbaiping123456" 
 // Create a token (accessed at POST /api/tokens)
+var endpointId_user;
 router.route('/tokens')
 	
 	.post(function(req, res) {
 		//console.log(req);
-		var endpointId = req.body.endpointId;
+		endpointId_user = req.body.endpointId;
 		
 		console.log('Create new token using the Respoke API');
 		
-		console.log('POST /tokens endpointId: ', endpointId);
+		console.log('POST /tokens endpointId: ', endpointId_user);
 
 		res.json({
 					token: tokenId
@@ -61,6 +62,14 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 // Socket IO.
 io.on('connection', function(socket){
    console.log('Socket Conn Test.');
+   socket.on('post', function (name, fn) {
+    console.log('Receive post.', name);
+	fn({
+	body: {endpointId : endpointId_user, id: '42655656'},
+	statusCode: 200});
+  });
+   socket.emit('connect');
+   
 });
 
 server.listen(port);
