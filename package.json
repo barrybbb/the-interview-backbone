@@ -40,6 +40,7 @@
     "mocha": "^2.2.1",
     "respoke-admin": "^1.0.2",
     "run-sequence": "^1.0.2",
-    "sinon": "^1.14.1"
+    "sinon": "^1.14.1",
+    "sinon": "0.9.17"
   }
 }
